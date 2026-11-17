@@ -1,0 +1,170 @@
+# SpecMine v1.1 — 500-repository sample
+
+SpecMine is a large-scale corpus of **Spec-Driven Development (SDD)** artifacts
+mined from public GitHub repositories: the Markdown specifications that AI coding
+agents turn into code, attributed to the tool that produced them, enriched with
+full repository metadata and commit history, and, for a subsample of
+repositories, followed into the pull requests that change them.
+
+This repository is the **curated 500-repository sample** for the MSR 2027 Mining
+Challenge. It is a faithful slice of every layer of the full dataset, small enough
+to clone and query in minutes. The full v1.0 dataset (MySQL dump plus CSV/Parquet
+exports and the complete spec-contents JSONL) is published on Zenodo, with a
+per-table Parquet mirror on Hugging Face:
+
+- **Full dataset (Zenodo, citable DOI):** <https://doi.org/10.5281/zenodo.22102779>
+- **Parquet mirror (Hugging Face):** <https://huggingface.co/datasets/ShyAgarwal/specmine>
+- **Snapshot:** SpecMine v1.1, July 2026 snapshot (Kiro census fully enriched in v1.1:
+  content, repository objects, commit histories capped at the broad census's
+  2026-07-11 crawl end, and the 39 features — this sample carries the enriched
+  Kiro tables for its 100 Kiro repositories).
+
+## What SpecMine captures (full dataset)
+
+| Layer | Count | This sample |
+|---|---:|---|
+| Broad census (`spec.md`/`specs.md`, 17 named tools) | 470,795 specs / 73,030 repos | 28,583 specs / 415 repos |
+| Kiro census (`.kiro/specs` requirements/design/tasks) | 98,574 artifacts / 12,910 repos | 18,585 / 100 repos |
+| PR layer (spec-touching PRs, ≥10-star repos) | 5,992 PRs / 581 repos | 5,335 PRs / 229 repos |
+| OpenSpec change artifacts | 266,230 | 22,992 |
+| Traceability index (typed references) | 2,421,323 | 261,032 |
+
+The PR sweep targeted 11 tools, but `specweave` yielded no spec-touching PRs, so
+**10 tools** actually appear in `pull_requests` (both in the full dataset and this
+sample).
+
+The 500 sample repositories were selected to cover every one of the 17 named
+tools and 4 path buckets, the Kiro census, and the PR layer. Selection is
+reproducible (see `sample_repos.txt` for the exact list): the PR-richest 229
+repositories, at least three repositories per named tool, and the highest-starred
+broad-census repositories to bring the broad-census set to 400, plus 100 Kiro
+repositories. Because 15 of those Kiro repositories also carry a `spec.md`, the
+final counts are 415 distinct broad-census repositories and 85 Kiro-only, for 500
+in total.
+
+**The sample is deliberately not representative of the full corpus.** Because it
+is star-curated, 61% of its broad-census repositories have ≥100 stars and 82% are
+licensed, against 1.3% and 39% in the full corpus; its specs also skew more recent
+(97.5% first committed in 2026 vs 92%). Use the sample to learn the schema and
+prototype queries, not to estimate population rates.
+
+## Layout
+
+```
+data/                         Parquet, one file per released table (zstd)
+  spec_files.parquet          broad-census spine (repo object, provenance, attribution)
+  spec_file_commits.parquet   per-file commit history
+  spec_content_features.parquet   39 structural / requirement-template features per spec
+  spec_links.parquet          traceability index (typed references)
+  kiro_files.parquet          Kiro requirements / design / tasks (+ content hashes, commit counts)
+  kiro_repos.parquet          v1.1: repository objects for the sample's Kiro repos
+  kiro_file_commits.parquet   v1.1: per-artifact Kiro commit histories
+  kiro_content_features.parquet   v1.1: 39 features over Kiro artifact content
+  openspec_artifact_files.parquet   OpenSpec proposals / designs / task lists (+ content)
+  openspec_code_refs.parquet  OpenSpec task-to-code refs resolved on the git tree
+  pull_requests.parquet       PR layer: the 11 <tool>_prs tables unioned (10 non-empty), with a `tool` column
+  pr_files.parquet            PR layer: per-file changesets, each file flagged spec/code
+  repo_trees.parquet          git-tree metadata references resolve against
+specs.jsonl.gz                raw Markdown of every sample broad-census spec
+kiro_specs.jsonl.gz           v1.1: raw Markdown of the sample's Kiro artifacts
+schema.sql                    CREATE TABLE for each shipped table (MySQL types)
+DATA_DICTIONARY.md            every shipped column, typed and described
+sample_repos.txt              the 500 repo_name values in this sample
+load.py                       load the Parquet with pandas and run the flagship query
+example.ipynb                 worked examples over the sample
+```
+
+Every identifier (`repo_name`, `file_url`, `pr_number`) is a live GitHub value,
+so any row can be re-fetched or joined to external sources.
+
+## Quick start
+
+```bash
+pip install pandas pyarrow            # duckdb optional
+python load.py                        # loads every table, prints a summary + the co-change query
+```
+
+Pandas:
+
+```python
+import pandas as pd
+prs = pd.read_parquet("data/pull_requests.parquet")
+prf = pd.read_parquet("data/pr_files.parquet")
+
+# "which specs change in the same PR as code?" — the flagship spec->code query
+cochange = prs[prs.touches_code == 1]
+files = prf.merge(cochange[["tool", "repo_name", "pr_number"]],
+                  on=["tool", "repo_name", "pr_number"])
+print(files[files.is_spec == 1].shape, "spec files changed alongside code")
+```
+
+DuckDB (query the Parquet directly, no load step):
+
+```sql
+SELECT tool, COUNT(*) AS cochange_prs
+FROM 'data/pull_requests.parquet'
+WHERE touches_code = 1
+GROUP BY tool ORDER BY cochange_prs DESC;
+```
+
+Spec text (`specs.jsonl.gz`) joins to `spec_files` on `file_url_sha16`:
+
+```python
+import gzip, json
+with gzip.open("specs.jsonl.gz", "rt") as f:
+    specs = [json.loads(l) for l in f]      # {file_url_sha16, repo_name, file_path, spec_tool, spec_role, content}
+```
+
+MySQL: create the tables with `schema.sql`, then load each Parquet (for example
+with `pandas.DataFrame.to_sql`, or convert to CSV and `LOAD DATA`).
+
+## How the sample maps to the full release
+
+- **PR layer.** The full MySQL release stores the PR layer as 11 per-tool table
+  pairs (`openspec_prs`/`openspec_pr_files`, `speckit_prs`/`speckit_pr_files`, and
+  so on). This sample unions them into `pull_requests.parquet` and
+  `pr_files.parquet` and adds a `tool` column, which is easier to query and
+  loses nothing.
+- **What "spec-touching" means, and orphan PRs.** A PR enters the sweep when a
+  commit that modified a spec file is associated with it (GitHub's
+  `/commits/{sha}/pulls`); the changeset then comes from the PR's net diff
+  (`/pulls/{num}/files`). These two GitHub views can disagree, so a few PRs carry
+  `n_spec_files = 0`: 5 of 5,992 (0.08%) in the full dataset, 3 because the diff is
+  truncated at GitHub's 3,000-file-per-PR cap and 2 because the spec commit sits in
+  shared or ancestor history that the net diff no longer shows. Filter on
+  `n_spec_files > 0` if you need every PR to contain a visible spec file.
+- **Kept set.** Both the sample and the full release ship only kept specs
+  (`not_spec_filter = 0`). The not-a-spec filter (package caches, vendored trees,
+  pre-2024 files) is a documented, reversible rule, so any excluded file can be
+  recovered by re-running the pipeline or re-fetching it from GitHub.
+- **Dropped columns.** Commit-email addresses, GPG-signature blobs, and avatar
+  URLs are dropped at release time; raw `file_content` moves to `specs.jsonl.gz`.
+  Author and committer logins and numeric IDs are kept (they are public and are
+  what makes authorship analysis possible).
+
+## Licensing, ethics, and privacy
+
+All artifacts come from public GitHub repositories, collected within the API
+terms of service. Every repository row keeps its SPDX license so you can filter
+to license-compatible subsets; redistribution follows each repository's own
+terms. Public handles are kept; private contact details are not. Please avoid
+deanonymization and keep personal data out of published results beyond aggregate
+analysis.
+
+## Citation
+
+Cite the SpecMine dataset (Zenodo, latest version):
+
+```bibtex
+@dataset{specmine_v1_2026,
+  author    = {Agarwal, Shyam and Vasilescu, Bogdan},
+  title     = {SpecMine: A Large-Scale Corpus of Spec-Driven Development Artifacts},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22102779},
+  url       = {https://doi.org/10.5281/zenodo.22102779}
+}
+```
+
+The accompanying MSR 2027 Mining Challenge paper will be linked here once the
+preprint is posted.

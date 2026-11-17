@@ -1,0 +1,582 @@
+[
+  {
+    "review_id": "S01",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S02",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S03",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S04",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S05",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S06",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S07",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S08",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S09",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S10",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S11",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S12",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S13",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S14",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S15",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S16",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S17",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S18",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S19",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  },
+  {
+    "review_id": "S20",
+    "reviewer": "A",
+    "rubric_version": "0.1",
+    "purpose": "",
+    "task_type": "",
+    "scope": "",
+    "context_needed": "",
+    "initial_label": "",
+    "initial_reason": "",
+    "scores": {
+      "requirements_scope": null,
+      "acceptance_criteria": null,
+      "clarity_conciseness": null,
+      "references_constraints": null,
+      "verification_guidance": null
+    },
+    "evidence": {
+      "requirements_scope": "",
+      "acceptance_criteria": "",
+      "clarity_conciseness": "",
+      "references_constraints": "",
+      "verification_guidance": ""
+    },
+    "final_label": "",
+    "final_reason": "",
+    "select_for_pilot": false,
+    "disagreement_notes": ""
+  }
+]
